@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"/>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="container">
+            <nav class="menu">
+                <ul>
+                    <li class="menu-item">
+                        <a href="/">Schedule</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="teachers.html">Teachers</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="rooms.html">Rooms</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="add">Other</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search">
+                <img src="images/search icon.png" alt="search">
+            </div>
+            <div class="logo">
+                <img src="images/iitu 1.png" alt="logo">
+                <!-- указать ссылку на group.html teacher.html или rooms.html при нажатии поиска -->
+            </div>
+        </div>
+    </header>
+
+    <!-- main section -->
+    <section class="main">
+        <div class="container">
+            <div class="main-info">
+                <h3>INTERNATIONAL IT UNIVERSITY</h3>
+                <h1 class="main-title">SCHEDULE SEARCH</h1>
+                <div class="main-text">Please, write down here your group, teachers name or room to get needed information.</div>
+                <form action="/Schedule" class="align-baseline" method="post">
+                    <div class="search-box">
+                        <input class="search-txt" type="text" name="find" placeholder="For example: SIS-2001, Amantay A., 601">
+                        <button type="submit" class="button">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

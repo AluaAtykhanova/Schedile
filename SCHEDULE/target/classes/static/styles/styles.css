@@ -1,0 +1,299 @@
+/* убираем стандартные отступы */
+*{
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+/* задаем нужные шрифты */
+@font-face {
+    font-family: 'Outfit';/*тощий*/
+    src: url("../resources/static/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: 'OUTFIT';/*жирный*/
+    src: url("../fonts/Outfit-Bold.ttf");
+    font-weight: bold;
+}
+
+/* основной шрифт  */
+body{
+    background-color: #f5f5f5;
+    font-family: 'Outfit', sans-serif;;
+}
+
+/* стили для header */
+header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.header {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    background-color: white;
+
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 20px;
+
+}
+
+
+.logo img {
+    vertical-align: bottom;
+    height: 50px;
+    width: auto;
+}
+
+.menu {
+    margin-right: 360px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-item {
+    margin-right:114px;
+}
+
+.menu-item a{
+    font-size: 15px;
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+.menu-item a:hover{
+    border-bottom: 2px solid #ff0000;
+    color: #ff0000;
+}
+
+.main {
+    background-color: #fff;
+    background-image: url("/images/aipek.jpg");
+    background-repeat: no-repeat;
+    background-size: 744px 439px;
+    background-position: 645px 70px;
+    padding: 110px 40px 300px 0;
+}
+
+.main-info{
+    max-width: 855px;
+}
+
+.main-title{
+    font-family: 'OUTFIT';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 110%;
+    color: #A80000;
+    margin-bottom: 20px;
+}
+
+.main-text{
+    font-family: 'Outfit';
+    font-size: 20px;
+    line-height: 130%;
+    color: #2C2C2C;
+    margin-bottom: 40px;
+    max-width: 550px;
+}
+
+
+.button{
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 20px;
+    width: 150px;
+    height: 30px;
+    background: #A80000;
+    color: white;
+    font-size: 20px;
+    border: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-txt {
+    border: 1px solid #2d2c2c;
+    border-radius: 3px;
+    background: #f2f1f1 !important;
+    outline: none;
+    height: 40px;
+    width: 400px;
+    color: #383838;
+    font-size: 15px;
+    font-family: 'Outfit';
+}
+
+.search-txt::placeholder{
+    padding-left: 15px;
+}
+
+.alua{
+    background-position:top right 10px;
+    background-size: cover;
+}
+.group-name{
+    color:#A80000;
+    font-size: 65px;
+    font-family: 'Outfit';
+    font-weight: lighter;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-left:20px;
+}
+
+.speciality{
+    font-size: 26px;
+    color: #808080;
+    text-align: right;
+    margin-top: -70px;
+    margin-right: 90px;
+    padding-right: 10px;
+}
+
+.icon{
+    padding-left: 10px;
+    height: 38px;
+    margin-right: 10px;
+    margin-top: -35px;
+    margin-right: -40px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabs label {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3.5rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background ease 0.3s;
+    color:#5C5C5C;
+    height: 40px;
+}
+
+.tabs .tab {
+    order: 9;
+    flex-grow: 1;
+    width: 1200px;
+    height: 400px;
+    display: none;
+    padding: 1rem;
+    background: white;
+    padding: 20px;
+}
+
+.tabs input[type="radio"] {
+    display: none;
+    height: 40px;
+}
+
+.tabs input[type="radio"]:checked + label {
+    background: #E31E25;
+    color: white;
+    height: 40px;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+@media (max-width: 465px) {
+    .tabs .tab,
+    .tabs label {
+        order: initial;
+    }
+
+    .tabs label {
+        width: 100%;
+        margin-left: 50px;
+    }
+}
+
+.table {
+    background: white;
+    box-sizing: border-box;
+    font-family: 'Outfit';
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 80rem;
+    margin: 0 auto;
+    font-size: 110%;
+    display: flex;
+    align-items: center;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 1200px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: none !important;
+    color: black !important;;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.room-name{
+    color:#A80000;
+    font-size: 65px;
+    font-family: 'Outfit';
+    font-weight: lighter;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-left:500px;
+}

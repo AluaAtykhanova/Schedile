@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Schedule</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container mt-5">
+  <form action="/test" method="post">
+    <input type="text" name="find" placeholder="Group/Teachers/Room" class="form-control">
+    <button type="submit" class="btn btn btn-dark mt-2">Найти</button>
+  </form>
+</div>
+
+
+  <div class="table">
+    <div class="tabs">
+        <input type="radio" name="tabs" id="monday" checked="checked">
+        <label for="monday">Monday</label>
+      <div class="tab">
+        <table class="content-table">
+          <thead>
+          <tr>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Course name</th>
+            <th>Teacher</th>
+            <th>Room</th>
+          </tr>
+          </thead>
+    <!--- Алуа,НЕ ТРОГАТЬ--->
+    <tbody>
+    <!-- сделать выделение free-time-->
+        <div th:each="el:${Monday}">
+          <tr>
+            <td th:text="${el.time}"></td>
+            <td th:text="${el.type}"></td>
+            <td th:text="${el.course}"></td>
+            <td th:text="${el.teacher}"></td>
+            <td th:text="${el.room}"></td>
+          </tr>
+        </div>
+    </tbody>
+  </table>
+      </div>
+      <input type="radio" name="tabs" id="tuesday">
+      <label for="tuesday">Tuesday</label>
+      <div class="tab">
+        <!-- таблица с данными вторника -->
+        <table class="content-table">
+          <thead>
+          <tr>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Course name</th>
+            <th>Teacher</th>
+            <th>Room</th>
+          </tr>
+          </thead>
+          <tbody>
+          <div th:each="el:${Tuesday}">
+            <tr><!-- данные введенные с бд -->
+              <td th:text="${el.time}"></td>
+              <td th:text="${el.type}"></td>
+              <td th:text="${el.course}"></td>
+              <td th:text="${el.teacher}"></td>
+              <td th:text="${el.room}"></td>
+            </tr>
+          </div>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+</body>
+</html>
+
+<!---
+      <input type="radio" name="tabs" id="wednesday">
+      <label for="wednesday"></label>
+      <div class="tab">
+<table class="content-table">
+  <thead>
+  <tr>
+    <th>Time</th>
+    <th>Type</th>
+    <th>Course name</th>
+    <th>Teacher</th>
+    <th>Room</th>
+  </tr>
+  </thead>
+  <tbody>
+  <div th:each="el:${}">
+    <h3 th:text="${el.day} + ' ' + ${el.time}"/>
+    <p th:text="${el.course}"/>
+    <p th:text="${el.type} + ' : ' + ${el.groupName}"/>
+    <p th:text="${el.teacher}"/>
+    <p th:text="${el.room}"/>
+  </div>
+  </tbody>
+</table>
+</div>
+
+
+
+      <h3 th:text="${find}"></h3>
+  <h3 th:text="${test}"></h3>
+  <div th:each="el:${parameters}" class=" alert alert-info mt-2">
+    <h3 th:text="${el.day} + ' ' + ${el.time}"/>
+    <p th:text="${el.course}"/>
+    <p th:text="${el.type} + ' : ' + ${el.groupName}"/>
+    <p th:text="${el.teacher}"/>
+    <p th:text="${el.room}"/>
+  </div> --->

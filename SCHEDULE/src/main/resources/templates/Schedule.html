@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<h3 th:text="${find}"></h3>
+<h3 th:text="${test}"></h3>
+<div th:each="el:${parameters}" class=" alert alert-info mt-2">
+    <h3 th:text="${el.day} + ' ' + ${el.time}"/>
+    <p th:text="${el.course}"/>
+    <p th:text="${el.type} + ' : ' + ${el.groupName}"/>
+    <p th:text="${el.teacher}"/>
+    <p th:text="${el.room}"/>
+</div>
+</body>
+</html>
